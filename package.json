@@ -1,0 +1,12 @@
+{
+  "name": "textbee-broadcast",
+  "version": "1.0.0",
+  "description": "SMS broadcast server",
+  "main": "broadcast.js",
+  "scripts": {
+    "start": "node broadcast.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
