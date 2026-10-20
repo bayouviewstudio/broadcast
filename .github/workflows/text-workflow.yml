@@ -1,0 +1,19 @@
+name: Send Notification SMS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send-text:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send SMS via TextBee
+        run: |
+          curl -X POST "https://api.textbee.dev/api/v1/gateway/send-sms" \
+            -H "x-api-key: ${{ secrets.TEXTBEE_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "deviceId": "${{ secrets.TEXTBEE_DEVICE_ID }}",
+              "recipients": ["+12283436181"],
+              "message": "Hello from my direct GitHub workflow!"
+            }'
