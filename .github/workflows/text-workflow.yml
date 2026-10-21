@@ -3,7 +3,7 @@ name: Send Notification SMS
 on:
   workflow_dispatch:
   repository_dispatch:
-    types: [workflow_dispatch]
+    types: [sms_signup]
 
 jobs:
   send-text:
